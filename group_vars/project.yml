@@ -5,4 +5,4 @@ project_organization: "Default"
 project_type: "git"
 username: rhel
 password: redhat
-tower_verify_ssl: no
+ssl_check: no
