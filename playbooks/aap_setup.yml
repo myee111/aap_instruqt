@@ -13,3 +13,4 @@
         scm_url: "{{ project_github_url }}"
         update_project: yes
         state: present
+        tower_verify_ssl: no
