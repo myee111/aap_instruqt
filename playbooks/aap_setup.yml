@@ -12,4 +12,4 @@
         scm_type: "{{ project_type }}"
         scm_url: "{{ project_github_url }}"
         update_project: yes
-        tower_verify_ssl: no
+        
