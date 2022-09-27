@@ -14,3 +14,5 @@
         update_project: yes
         state: present
         tower_verify_ssl: no
+        controller_username: "rhel"
+        controller_password: "redhat"
