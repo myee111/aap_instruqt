@@ -3,7 +3,7 @@
   hosts: all
   connection: local
   vars:
-    tower_verify_ssl: '{{ ssl_check }}'
+    tower_verify_ssl: no
     controller_username: '{{ username }}'
     controller_password: '{{ password }}'
   vars_files:
