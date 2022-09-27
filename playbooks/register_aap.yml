@@ -6,6 +6,6 @@
       awx.awx.license:
         validate_certs: no
         manifest: "{{ manifest_file_and_path }}"
-        controller_username: rhel
-        controller_password: redhat
+        controller_username: "{{ username }}"
+        controller_password: "{{ password }}"
         force: yes

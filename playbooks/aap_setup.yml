@@ -3,9 +3,9 @@
   hosts: all
   connection: local
   vars:
-    tower_verify_ssl: "{{ ssl_check }}"
-    controller_username: "{{ username }}"
-    controller_password: "{{ password }}"
+    - tower_verify_ssl: "{{ ssl_check }}"
+    - controller_username: "{{ username }}"
+    - controller_password: "{{ password }}"
   vars_files:
     - "../group_vars/project.yml"
   tasks:
