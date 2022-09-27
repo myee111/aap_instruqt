@@ -17,7 +17,7 @@
         scm_url: "{{ project_github_url }}"
         update_project: yes
         state: present
-        tower_verify_ssl: "{{ ssl_check }}"
+        validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
     - name: Create hosts
