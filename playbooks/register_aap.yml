@@ -1,0 +1,9 @@
+---
+- name: Get a license for AAP.
+  hosts: all
+  tasks:
+    - name: License AAP
+      awx.awx.license:
+        controller_username: "rhel-0ab2"
+        controller_password: "Redhat1!"
+        pool_id: 12885540
