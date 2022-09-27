@@ -4,7 +4,8 @@
   tasks:
     - name: License AAP
       awx.awx.license:
+        validate_certs: no
+        manifest: "/root/manifest_instruqt_aap_20220927T195338Z.zip"
         controller_username: rhel
         controller_password: redhat
-        pool_id: 12885540
-        validate_certs: no
+        force: yes
