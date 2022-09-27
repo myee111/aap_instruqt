@@ -3,7 +3,7 @@
   hosts: all
   connection: local
   vars:
-    tower_verify_ssl: no
+    tower_verify_ssl: "{{ ssl_check }}"
     controller_username: '{{ username }}'
     controller_password: '{{ password }}'
   vars_files:
@@ -17,4 +17,10 @@
         scm_url: "{{ project_github_url }}"
         update_project: yes
         state: present
+        tower_verify_ssl: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
+    - name: Create hosts
+      awx.awx.host:
+        name:
         
