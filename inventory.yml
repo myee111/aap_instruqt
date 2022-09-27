@@ -3,4 +3,6 @@ all:
     aap:
       vars:
         ansible_connection: local
+        username: "{{ controller_username }}"
+        password: "{{ controller_password }}"
        
