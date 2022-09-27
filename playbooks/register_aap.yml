@@ -7,3 +7,4 @@
         controller_username: "rhel-0ab2"
         controller_password: "Redhat1!"
         pool_id: 12885540
+        validate_certs: no
