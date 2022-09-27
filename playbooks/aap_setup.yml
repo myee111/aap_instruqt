@@ -6,6 +6,8 @@
     tower_verify_ssl: "{{ ssl_check }}"
     controller_username: "{{ username }}"
     controller_password: "{{ password }}"
+  vars_files:
+    - "../group_vars/project"
   tasks:
     - name: Create a new project
       awx.awx.project:
