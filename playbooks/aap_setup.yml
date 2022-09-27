@@ -1,0 +1,14 @@
+---
+- name: Playbook to configure AAP
+  hosts: all
+  connection: local
+  vars_files:
+    - "../group_vars/project.yml"
+  tasks:
+    - name: Create a new project
+      awx.awx.project:
+        name: "{{ project_name }}"
+        organization: "{{ project_organization }}"
+        scm_type: "{{ project_type }}"
+        scm_url: "{{ project_github_url }}"
+        update_project: yes

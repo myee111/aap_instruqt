@@ -5,7 +5,7 @@
     - name: License AAP
       awx.awx.license:
         validate_certs: no
-        manifest: "/root/manifest_instruqt_aap_20220927T195338Z.zip"
+        manifest: "{{ manifest_file_and_path }}"
         controller_username: rhel
         controller_password: redhat
         force: yes
