@@ -3,6 +3,4 @@ project_github_url: "https://github.com/myee111/aap_instruqt"
 project_name: "Acme Org Infrastructure Configuration"
 project_organization: "Default"
 project_type: "git"
-username: rhel
-password: redhat
-ssl_check: no
+
