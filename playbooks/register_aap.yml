@@ -4,7 +4,7 @@
   tasks:
     - name: License AAP
       awx.awx.license:
-        controller_username: rhel-0ab2
-        controller_password: Redhat1!
+        controller_username: rhel
+        controller_password: redhat
         pool_id: 12885540
         validate_certs: no
