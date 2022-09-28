@@ -9,7 +9,9 @@
   vars_files:
     - "../group_vars/project.yml"
     - "../group_vars/main.yml"
+    - "../group_vars/inventory.yml"
   tasks:
+    
     - name: Create a new project
       awx.awx.project:
         name: "{{ project_name }}"
@@ -21,7 +23,21 @@
         validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
+    
+    - name: Create inventory
+      awx.awx.inventory:
+        name: "{{ inventory_name }}"
+        organization: "{{ inventory_org }}"
+        state: present
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
+    
     - name: Create hosts
       awx.awx.host:
-        name:
-        
+        name: rhel
+        inventory: "{{ inventory_name }}"
+        state: present
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
