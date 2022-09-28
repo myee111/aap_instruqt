@@ -36,9 +36,10 @@
     
     - name: Create hosts
       awx.awx.host:
-        name: "{{ rhel_hosts }}"
+        name: "{{ item }}"
         inventory: "{{ inventory_name }}"
         state: present
         validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
+      loop: "{{ rhel_hosts }}"
