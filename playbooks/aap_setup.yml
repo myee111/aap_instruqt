@@ -60,5 +60,5 @@
         credential_type: Machine
         inputs:
           username: root
-          ssh_key_data: "{{ ssh_key['content'] }}"
+          ssh_key_data: "{{ ssh_key['content'] | b64decode }}"
         
