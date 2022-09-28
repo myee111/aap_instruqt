@@ -10,6 +10,7 @@
     - "../group_vars/project.yml"
     - "../group_vars/main.yml"
     - "../group_vars/inventory.yml"
+    - "../group_vars/hosts.yml"
   tasks:
     
     - name: Create a new project
