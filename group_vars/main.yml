@@ -3,3 +3,4 @@ manifest_file_and_path: "/root/manifest_instruqt_aap_20220927T195338Z.zip"
 username: rhel
 password: redhat
 ssl_check: no
+private_ssh_key_path: "/root/.ssh/id_rsa"

@@ -2,10 +2,10 @@
 - name: Playbook to configure AAP
   hosts: all
   connection: local
-  vars:
-    validate_certs: "{{ ssl_check }}"
-    controller_username: '{{ username }}'
-    controller_password: '{{ password }}'
+  # vars:
+  #   validate_certs: "{{ ssl_check }}"
+  #   controller_username: '{{ username }}'
+  #   controller_password: '{{ password }}'
   vars_files:
     - "../group_vars/project.yml"
     - "../group_vars/main.yml"
@@ -21,28 +21,44 @@
         scm_url: "{{ project_github_url }}"
         update_project: yes
         state: present
-        # validate_certs: "{{ ssl_check }}"
-        # controller_username: '{{ username }}'
-        # controller_password: '{{ password }}'
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
     
     - name: Create inventory
       awx.awx.inventory:
         name: "{{ inventory_name }}"
         organization: "{{ inventory_org }}"
         state: present
-        # validate_certs: "{{ ssl_check }}"
-        # controller_username: '{{ username }}'
-        # controller_password: '{{ password }}'
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
     
     - name: Create hosts
       awx.awx.host:
         name: "{{ item }}"
         inventory: "{{ inventory_name }}"
         state: present
-        # validate_certs: "{{ ssl_check }}"
-        # controller_username: '{{ username }}'
-        # controller_password: '{{ password }}'
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
       loop: "{{ rhel_hosts }}"
 
-    # - name: Add SSH key Credential
-    #   awx.awx.cred
+    - name: Fetch private key
+      slurp:
+        src: '$HOME/.ssh/aws-private.pem'
+      register: ssh_key
+
+    - name: Add SSH key Credential
+      awx.awx.credential:
+        name: acme_ssh_key
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
+        organization: "{{ inventory_org }}"
+        state: present
+        credential_type: Machine
+        inputs:
+          username: root
+          ssh_key_data: "{{ ssh_key['content'] }}"
+        
