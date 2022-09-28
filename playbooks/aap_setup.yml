@@ -8,6 +8,7 @@
   #   controller_password: '{{ password }}'
   vars_files:
     - "../group_vars/project.yml"
+    - "../group_vars/main.yml"
   tasks:
     - name: Create a new project
       awx.awx.project:
@@ -17,7 +18,7 @@
         scm_url: "{{ project_github_url }}"
         update_project: yes
         state: present
-        validate_certs: no
+        validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
     - name: Create hosts
