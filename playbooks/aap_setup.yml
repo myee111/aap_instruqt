@@ -46,7 +46,7 @@
 
     - name: Fetch private key
       slurp:
-        src: '$HOME/.ssh/aws-private.pem'
+        src: "{{ private_ssh_key_path }}"
       register: ssh_key
 
     - name: Add SSH key Credential
