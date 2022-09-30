@@ -1,6 +1,6 @@
 ---
 project_github_url: "https://github.com/myee111/aap_instruqt"
-project_local_path: "/var/lib/awx/projects/demo_project/"
+project_local_path: "/var/lib/awx/projects/aap_demo_project/"
 project_name: "Demo Project"
 project_organization: "Default"
 project_type: "manual"
