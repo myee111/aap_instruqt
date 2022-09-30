@@ -18,7 +18,7 @@
         name: "{{ project_name }}"
         organization: "{{ project_organization }}"
         scm_type: "{{ project_type }}"
-        #scm_url: "{{ project_github_url }}"
+        scm_url: "{{ project_github_url }}"
         local_path: "{{ project_local_path }}"
         update_project: yes
         state: present
