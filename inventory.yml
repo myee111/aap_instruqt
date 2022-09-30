@@ -3,5 +3,3 @@ all:
     aap:
       vars:
         ansible_connection: local
-        
-project_data_dir=/var/lib/awx/projects
