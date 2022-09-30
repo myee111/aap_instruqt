@@ -1,5 +1,5 @@
 ---
-project_github_url: "https://github.com/myee111/aap_instruqt"
+project_github_url: "https://github.com/myee111/aap_demo_ansiblefest"
 project_local_path: "/var/lib/awx/projects/aap_demo_project/"
 project_name: "AAP Demo Project"
 project_organization: "Default"
