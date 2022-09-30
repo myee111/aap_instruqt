@@ -1,6 +1,7 @@
 ---
 project_github_url: "https://github.com/myee111/aap_instruqt"
-project_name: "Acme Org Infrastructure Configuration"
+project_local_path: "/var/lib/awx/projects/demo_project/"
+project_name: "Demo Project"
 project_organization: "Default"
-project_type: "git"
+project_type: "Manual"
 
