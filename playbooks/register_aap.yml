@@ -1,6 +1,8 @@
 ---
 - name: Get a license for AAP.
   hosts: all
+  vars_files:
+    - "../group_vars/main.yml"
   tasks:
     - name: License AAP
       awx.awx.license:
