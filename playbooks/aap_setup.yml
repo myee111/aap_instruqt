@@ -11,6 +11,7 @@
     - "../group_vars/main.yml"
     - "../group_vars/inventory.yml"
     - "../group_vars/hosts.yml"
+    - "../group_vars/job_template.yml"
   tasks:
 
     - name: Modify Demo Project
@@ -71,3 +72,5 @@
         playbook: {{ template_playbook }}
         credentials: {{ template_credentials }}
         state: {{ template_state }}
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
