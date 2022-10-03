@@ -1,0 +1,7 @@
+---
+template_name: "Demo Job Template"
+template_job_type: "run"
+template_playbook: "test.yml"
+template_credentials: 
+  - "acme_ssh_key"
+template_state: "present"
