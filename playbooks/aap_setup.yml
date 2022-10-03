@@ -65,12 +65,12 @@
     
     - name: Modify the Demo Job Template
       awx.awx.job_template:
-        name: {{ template_name }}
-        job_type: {{ template_job_type }}
-        organization: {{ inventory_org }}
-        inventory: {{ inventory_name }}
-        playbook: {{ template_playbook }}
-        credentials: {{ template_credentials }}
-        state: {{ template_state }}
+        name: "{{ template_name }}"
+        job_type: "{{ template_job_type }}"
+        organization: "{{ inventory_org }}"
+        inventory: "{{ inventory_name }}"
+        playbook: "{{ template_playbook }}"
+        credentials: "{{ template_credentials }}"
+        state: "{{ template_state }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
