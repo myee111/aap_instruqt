@@ -74,3 +74,4 @@
         state: "{{ template_state }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
+        validate_certs: "{{ ssl_check }}"
