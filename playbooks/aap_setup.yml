@@ -12,15 +12,14 @@
     - "../group_vars/inventory.yml"
     - "../group_vars/hosts.yml"
   tasks:
-    
-    - name: Create a new project
+
+    - name: Modify Demo Project
       awx.awx.project:
         name: "{{ project_name }}"
         organization: "{{ project_organization }}"
         scm_type: "{{ project_type }}"
         scm_url: "{{ project_github_url }}"
-        #local_path: "{{ project_local_path }}"
-        #update_project: yes
+        update_project: yes
         state: present
         validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
