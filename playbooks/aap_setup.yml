@@ -20,7 +20,7 @@
         scm_type: "{{ project_type }}"
         scm_url: "{{ project_github_url }}"
         #local_path: "{{ project_local_path }}"
-        update_project: yes
+        #update_project: yes
         state: present
         validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
