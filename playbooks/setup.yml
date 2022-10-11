@@ -17,7 +17,7 @@
         validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
-        variables: "{{ server_variables_update }}"
+        variables: "{{ metrics_server_variables }}"
     - name: Setup Metrics Hosts group
       awx.awx.group:
         name: "{{ metrics_group_hosts }}"
@@ -28,7 +28,7 @@
         validate_certs: "{{ ssl_check }}"
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
-        variables: "{{ hosts_variables_update }}"
+        variables: "{{ metrics_hosts_variables }}"
     - name: Setup "Production Hosts" inventory
       awx.awx.inventory:
         name: "{{ inventory_name }}"
