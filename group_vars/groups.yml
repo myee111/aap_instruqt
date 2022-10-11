@@ -1,0 +1,26 @@
+---
+metrics_group_server: "Metrics Server"
+metrics_group_hosts: "Metrics Hosts"
+metrics_servers: 
+  - "rhel"
+metrics_hosts:
+  - "rhel2"
+  - "rhel3"
+hosts_variables_update:
+  metrics_retention_days: 7
+
+  firewall:
+    - service: pmcd
+      state: enabled
+    - service: cockpit
+      state: enabled
+server_variables_update:
+  metrics_graph_service: yes
+  metrics_query_service: yes
+  metrics_retention_days: 7
+  metrics_monitored_hosts: "{{ groups['all'] }}"
+  firewall:
+    - service: grafana
+      state: enabled
+    - service: cockpit
+      state: enabled
