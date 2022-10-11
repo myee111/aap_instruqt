@@ -29,3 +29,12 @@
         controller_username: '{{ username }}'
         controller_password: '{{ password }}'
         variables: "{{ hosts_variables_update }}"
+    - name: Update "Production Hosts" inventory
+      awx.awx.inventory:
+        name: "{{ inventory_name }}"
+        organization: "{{ inventory_org }}"
+        state: present
+        validate_certs: "{{ ssl_check }}"
+        controller_username: '{{ username }}'
+        controller_password: '{{ password }}'
+        variables: "{{ inventory_variables_update }}"
