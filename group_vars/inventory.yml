@@ -1,3 +1,14 @@
 ---
 inventory_name: "Production Hosts"
 inventory_org: "Default"
+inventory_variables_update:
+  timesync_ntp_servers:
+    - hostname: ca.pool.ntp.org
+      iburst: no
+  sshd:
+    MaxAuthTries: "2"
+    LoginGraceTime: "120"
+  tlog_scope_sssd: some
+  tlog_groups_sssd: wheel
+  crypto_policies_policy: DEFAULT:NO-SHA1
+  
