@@ -10,7 +10,7 @@
     - name: Setup Metrics Server group
       awx.awx.group:
         name: "{{ metrics_group_server }}"
-        preserve_existing_hosts: yes
+        #preserve_existing_hosts: yes
         state: present
         inventory: "{{ inventory_name }}"
         hosts: "{{ metrics_servers }}"
