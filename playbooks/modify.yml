@@ -7,28 +7,28 @@
     - "../group_vars/inventory.yml"
     - "../group_vars/main.yml"
   tasks:
-    - name: Update Metrics Server group
-      awx.awx.group:
-        name: "{{ metrics_group_server }}"
-        preserve_existing_hosts: yes
-        state: present
-        inventory: "{{ inventory_name }}"
-        hosts: "{{ metrics_servers }}"
-        validate_certs: "{{ ssl_check }}"
-        controller_username: '{{ username }}'
-        controller_password: '{{ password }}'
-        variables: "{{ server_variables_update }}"
-    - name: Update Metrics Hosts group
-      awx.awx.group:
-        name: "{{ metrics_group_hosts }}"
-        preserve_existing_hosts: yes
-        state: present
-        inventory: "{{ inventory_name }}"
-        hosts: "{{ metrics_hosts }}"
-        validate_certs: "{{ ssl_check }}"
-        controller_username: '{{ username }}'
-        controller_password: '{{ password }}'
-        variables: "{{ hosts_variables_update }}"
+    # - name: Update Metrics Server group
+    #   awx.awx.group:
+    #     name: "{{ metrics_group_server }}"
+    #     preserve_existing_hosts: yes
+    #     state: present
+    #     inventory: "{{ inventory_name }}"
+    #     hosts: "{{ metrics_servers }}"
+    #     validate_certs: "{{ ssl_check }}"
+    #     controller_username: '{{ username }}'
+    #     controller_password: '{{ password }}'
+    #     variables: "{{ metrics_servers }}"
+    # - name: Update Metrics Hosts group
+    #   awx.awx.group:
+    #     name: "{{ metrics_group_hosts }}"
+    #     preserve_existing_hosts: yes
+    #     state: present
+    #     inventory: "{{ inventory_name }}"
+    #     hosts: "{{ metrics_hosts }}"
+    #     validate_certs: "{{ ssl_check }}"
+    #     controller_username: '{{ username }}'
+    #     controller_password: '{{ password }}'
+    #     variables: "{{ metrics_hosts }}"
     - name: Update "Production Hosts" inventory
       awx.awx.inventory:
         name: "{{ inventory_name }}"
