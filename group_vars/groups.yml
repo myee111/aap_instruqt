@@ -6,7 +6,7 @@ metrics_servers:
 metrics_hosts:
   - "rhel2"
   - "rhel3"
-hosts_variables_update:
+metrics_hosts_variables:
   metrics_retention_days: 7
 
   firewall:
@@ -14,7 +14,7 @@ hosts_variables_update:
       state: enabled
     - service: cockpit
       state: enabled
-server_variables_update:
+metrics_server_variables:
   metrics_graph_service: yes
   metrics_query_service: yes
   metrics_retention_days: 7
